@@ -1,0 +1,326 @@
+@import "tailwindcss";
+
+:root {
+  /* Endgame Deep Ocean Palette */
+  --color-canvas: #01101D;
+  --color-surface-1: #051421;
+  --color-surface-2: #0D1E2F;
+  --color-surface-3: #021a2c;
+  --color-border: #0d2c4d;
+  --color-border-light: #142332;
+  --color-text: #ffffff;
+  --color-text-secondary: #d5e0e8;
+  --color-accent: #3b82f6;
+  --color-accent-hover: #60a5fa;
+  
+  /* Layout */
+  --app-max-width: 1250px;
+  --app-padding: 1.75rem;
+  
+  /* Spacing Scale */
+  --section-py: 6rem;
+  --title-mb: 3rem;
+  --grid-gap: 1.5rem;
+  --grid-gap-lg: 2rem;
+  
+  /* Radii */
+  --radius-card: 1rem;
+  --radius-button: 0.75rem;
+  --radius-small: 0.5rem;
+  
+  /* Legacy mappings */
+  --background: var(--color-canvas);
+  --foreground: #f4f4f5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), "Inter", "Inter Placeholder", sans-serif;
+  --font-mono: var(--font-geist-mono);
+  --width-app: var(--app-max-width);
+  --spacing-app: var(--app-padding);
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--foreground);
+  font-family: var(--font-inter), "Inter", "Inter Placeholder", sans-serif;
+}
+
+/* Ensure all text elements use the global font */
+p, h1, h2, h3, h4, h5, h6, span, div, a, button, input, textarea, select {
+  font-family: var(--font-inter), "Inter", "Inter Placeholder", sans-serif;
+}
+
+/* ============================================
+   DESIGN SYSTEM - Layout & Grid
+   ============================================ */
+
+.container-app {
+  width: 100%;
+  max-width: var(--app-max-width);
+  padding-left: var(--app-padding);
+  padding-right: var(--app-padding);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Section wrapper - consistent vertical rhythm */
+.section {
+  padding-top: var(--section-py);
+  padding-bottom: var(--section-py);
+  width: 100%;
+  background-color: var(--color-canvas);
+}
+
+/* Section title - consistent typography */
+.section-title {
+  font-size: 1.875rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--color-text);
+  margin-bottom: var(--title-mb);
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* Grid Patterns - Mobile First */
+
+/* 2-up: 1 col → md:2 col (for hero splits, large features) */
+.grid-2up {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+@media (min-width: 768px) {
+  .grid-2up {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 3-up: 1 col → sm:2 col → lg:3 col (for cards, case studies) */
+.grid-3up {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+@media (min-width: 640px) {
+  .grid-3up {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-3up {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* 4-up: 1 col → sm:2 col → lg:4 col (for tabs, investors) */
+.grid-4up {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+@media (min-width: 640px) {
+  .grid-4up {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-4up {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* 6-up: 2 col → sm:3 col → md:4 col → lg:6 col (for logos, team) */
+.grid-6up {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+@media (min-width: 640px) {
+  .grid-6up {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-6up {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-6up {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+/* ============================================
+   DESIGN SYSTEM - Card Styles
+   ============================================ */
+
+/* Card with signature teal glow gradient */
+.card-glow {
+  background: radial-gradient(circle, rgba(50, 150, 150, 0.2) 0%, transparent 70%);
+  background-color: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  transition: border-color 0.3s ease;
+}
+
+.card-glow:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+/* Standard card without gradient */
+.card {
+  background-color: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  transition: border-color 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+/* ============================================
+   DESIGN SYSTEM - Typography
+   ============================================ */
+
+/* Section h2 titles - not applied to card titles */
+.section h2,
+h2.section-title {
+  font-family: var(--font-inter), "Inter", "Inter Placeholder", sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.25em;
+  color: var(--color-text);
+  text-wrap: balance;
+  margin-bottom: var(--title-mb);
+}
+
+/* ============================================
+   DESIGN SYSTEM - Animations
+   ============================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes progress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-progress {
+  animation: progress 5s linear forwards;
+}
+
+/* ============================================
+   MDX Content Styles
+   ============================================ */
+
+.prose {
+  color: var(--foreground);
+}
+
+.prose h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+}
+
+.prose h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.prose h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+}
+
+.prose p {
+  margin-bottom: 1.25rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+}
+
+.prose ul, .prose ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+  color: var(--color-text-secondary);
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.prose blockquote {
+  border-left: 4px solid var(--color-border);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #a0aec0;
+}
+
+.prose code {
+  background: var(--color-surface-1);
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius-small);
+  font-size: 0.875rem;
+}
+
+.prose pre {
+  background: var(--color-surface-1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.prose pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.prose a {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  color: #93c5fd;
+}

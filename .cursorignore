@@ -1,0 +1,5 @@
+# Ignore build artifacts - prevents Cursor from interfering with Next.js dev server
+.next/
+node_modules/
+*.log
+

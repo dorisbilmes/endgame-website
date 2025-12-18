@@ -1,0 +1,70 @@
+---
+title: "How to build opportunity forecasting into SFDC based on time in stage"
+description: "Rescale's Gabe Rothman is back with more actionable wisdom. This time, he's presenting opportunity forecasting tips that you can apply to your own operations."
+date: 2024-02-22
+author: Minami Rojas
+tags: [Guide]
+image: /images/blog/cards/how-to-build-opportunity.png
+---
+
+If you read the first part of our Rescale interview, you learned all about how Rescale's VP of Operations, Gabe Rothman, thinks about compensation planning. In part two, we'll dive into exactly how Rescale built their opportunity forecasting engine to balance renewals and expansion.
+
+What tools does Rescale use to manage all their growth, anyway? Salesforce – with a nightly data transfer into their data warehouse – paired with Varicent's Incentives for Growth commission tool.
+
+But, like Rescale, even with these top-of-the-line tools in your toolbox, you might still wrestle with tons of existing, though mostly arbitrary, probability fields in Salesforce. And if that's the case, you're in good company.
+
+In fact, Rescale recently undertook a major initiative to develop a more intelligent system for assessing opportunity probability in Salesforce. The result? A more data-driven and accurate CRM.
+
+It was a big endeavor, but here's the gist:
+
+They started by examining the close rates of their sales at each stage. Gabe and his team took a broad perspective, looking at percentages of deals that reached completion at each stage.
+
+They then considered different variables such as business type (new or existing) and sales velocity. To avoid arbitrary determinations of sales velocity, they developed a statistical model based on standard deviations.
+
+Interestingly, they found a strong correlation between the length of time a deal stayed within a particular stage and its success rate. Specifically, deals that were within one standard deviation of the average time spent in each stage were usually 2x as likely to close successfully, compared to those outside of this range.
+
+But, for obvious reasons, calculating the average number of days a deal spent in each stage can be tricky. When a deal moves from one stage to the next, does the counter start afresh or does it accumulate the days spent across stages?
+
+Gabe explained how they dealt with a scenario where a deal, for whatever reason, remained stuck in Stage 1 for an unusually long period (i.e. three standard deviations outside the mean time for that stage).
+
+"The likelihood of close, according to the model, would be really low," Gabe explained. "But as soon as it moves to Stage 2, our assumption is that whatever was going on with that deal in Stage 1 has been resolved. It has made it to Stage 2, so we clear the slate, and we start fresh."
+
+In fact, it's such an accurate model that Rescale applied these win rates and days-in-stage thresholds to their opportunities in Salesforce.
+
+*Examples of predicted opportunity values based on standard deviations away from mean time in stage*
+
+## How Rescale tracks fluctuations in SFDC, and gauges forecast accuracy for each AE
+
+After they calculated the length of time a deal was in a particular stage and its success rate:
+
+- They stored all this data in a custom metadata object, parsed out by new versus existing opportunities.
+- Using a nightly flow job, they updated the probability coefficients based on the time each opportunity had been in its current stage.
+- Armed with all that data, they generated a daily report that provided insights into their probability model's predictions for their business volume for the quarter.
+
+Now, they could track fluctuations over the quarter and take snapshots for historical analysis. Even better, they could gauge the forecast accuracy of each AE and compare it to the AE's forecasts.
+
+"We can answer questions like, 'Where did they end up? How accurate were they? What did the model say about their cohort?'" Gabe clarified. "From there, we can help them to adjust based on the coaching mechanism."
+
+*Example SFDC custom settings housing win rate and time in stage variables*
+
+## Rescale's model predicted closed won revenue with 98% accuracy
+
+At this point, the forecasting calls are still largely anecdotal and deal-specific, but the probability model has found its place in the company's leadership-level pipeline meetings held every two weeks. Here, they discuss the pipeline from several angles; one of them being the forecast as per the model and the difference from the actual forecast.
+
+After all, automatic renewal opportunities do not inherently guarantee coverage of their existing pipeline. Instead, these opportunities serve as a tool for identifying accounts where they might be missing pipeline. It prompts inquiries into accounts with lower projected closes compared to the previous year, which often reveals areas needing attention or updates. And it also starts future quarter planning conversations by driving discussion around what pipeline is needed to meet the upcoming business goals.
+
+But at what scale does this method accurately predict pipeline coverage? Are there specific deal numbers or sizes for which this system is particularly beneficial? When is there enough data for reliable opportunity forecasting?
+
+Believe it or not, Gabe had these questions, too. In fact, in the beginning, he wasn't sure if he would have a large enough sample size to make the data meaningful.
+
+With that said, you do need a minimum amount of data for the strategy to be effective – especially given how granularly the data is parsed. In Rescale's case, they:
+
+- Split the data according to new and existing business
+- Segment it within those categories by enterprise and commercial
+- Look at cohorts of standard deviation, time, and stage
+
+For reference, the data that Gabe initially analyzed was over a three-year period, including 2,500 to 3,000 opportunities. But the definitive minimum number of opportunities required for validity isn't so cut-and-dry.
+
+Though he can't put a stake in the ground on that quite yet, Gabe had some parting advice: "Go back in time to look at the opps from the past. They'll give you a better sample size to model off of." Then, he stresses, focus on proper segmentation, particularly if you're a growing business with various team sizes and business motions.
+
+*Want to hear more from Gabe? Check out the full interview here.*

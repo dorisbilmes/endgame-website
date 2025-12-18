@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Endgame Website
+
+Marketing site built with Next.js and MDX-based content management.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+├── content/
+│   ├── blog/              # Blog posts (.mdx files)
+│   └── case-studies/      # Case studies (.mdx files)
+├── public/images/         # Static assets
+├── src/
+│   ├── app/               # Next.js pages
+│   ├── components/
+│   │   ├── ui/            # Reusable primitives (Button, Card, etc.)
+│   │   ├── layout/        # Navbar, Footer
+│   │   ├── sections/      # Page sections (Hero, CTA, etc.)
+│   │   └── content/       # Blog/MDX components
+│   ├── hooks/             # Custom React hooks
+│   ├── lib/               # Utilities
+│   ├── data/              # Static site data
+│   └── types/             # TypeScript types
+```
 
-## Learn More
+## Adding a New Blog Post
 
-To learn more about Next.js, take a look at the following resources:
+1. Create a new `.mdx` file in `content/blog/`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+content/blog/your-post-slug.mdx
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Add the frontmatter at the top of the file:
 
-## Deploy on Vercel
+```mdx
+---
+title: Your Blog Post Title
+description: A brief description that appears in previews
+date: 2024-12-18
+author: Your Name
+tags: [Product-Led Sales, AI, Guide]
+image: /images/blog/cards/your-image.png
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Your blog content goes here...
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## You can use markdown headings
+
+And **bold text**, *italic text*, [links](https://example.com), etc.
+```
+
+3. Add your card image to `public/images/blog/cards/`
+
+4. The post will automatically appear on the blog page, sorted by date (newest first)
+
+### Frontmatter Fields
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `title` | Yes | Post title |
+| `description` | Yes | Short description for previews |
+| `date` | Yes | Publication date (YYYY-MM-DD) |
+| `author` | No | Author name |
+| `tags` | No | Array of tags for filtering |
+| `image` | No | Card image path |
+
+## Adding a Case Study
+
+1. Create `content/case-studies/company-name.mdx`:
+
+```mdx
+---
+title: How Company achieved results with Endgame
+description: Short description
+company: COMPANY NAME
+date: 2024-12-18
+metrics:
+  - label: AI Adoption
+    value: 80%
+  - label: Time Saved
+    value: 10x
+---
+
+Case study content...
+```
+
+## Troubleshooting
+
+If you see cache errors like `ENOENT: no such file or directory`:
+
+```bash
+rm -rf .next
+npm run dev
+```
+
+## Tech Stack
+
+- **Next.js 15** - React framework
+- **Tailwind CSS 4** - Styling
+- **MDX** - Content management

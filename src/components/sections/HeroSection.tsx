@@ -1,0 +1,44 @@
+"use client";
+
+import { Button } from "@/components/ui";
+
+interface HeroSectionProps {
+  title?: React.ReactNode;
+  description?: string;
+  buttonText?: string | null;
+  buttonHref?: string;
+  videoSrc?: string | null;
+}
+
+export function HeroSection({
+  title = <>Revenue superintelligence<br />for modern GTM teams</>,
+  description = "Elevate the performance of your entire revenue organization with intelligence that's trained on all your deals, calls, and sales frameworks.",
+  buttonText = "Get a demo",
+  buttonHref = "#",
+  videoSrc = "/images/home/endgame-product-video.mp4",
+}: HeroSectionProps) {
+  return (
+    <section className="pt-40 pb-0 text-left relative overflow-visible w-full">
+      <div className="flex flex-col items-start w-full max-w-full">
+        <h1 className="font-sans text-[32px] md:text-[40px] font-medium tracking-tight leading-tight text-[var(--color-text)] mb-4 max-w-[800px]">
+          {title}
+        </h1>
+        <p className="text-base text-[var(--color-text-secondary)] mb-9 max-w-[600px] leading-relaxed">
+          {description}
+        </p>
+        {buttonText && (
+          <Button href={buttonHref} className="mb-8">
+            {buttonText}
+          </Button>
+        )}
+        {videoSrc && (
+          <div className="w-full mt-8">
+            <div className="w-full border border-[var(--color-border-light)] rounded-[var(--radius-card)] overflow-hidden bg-[var(--color-surface-2)]">
+              <video src={videoSrc} autoPlay loop muted playsInline className="w-full h-full object-contain block" />
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}

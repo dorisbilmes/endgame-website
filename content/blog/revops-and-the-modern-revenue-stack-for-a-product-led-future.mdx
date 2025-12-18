@@ -1,0 +1,117 @@
+---
+title: "Transforming the modern revenue stack for a product-led future"
+description: "Insight from Retool's Jonathan Krangel on the critical role RevOps plays in architecting the tech stack for modern revenue teams"
+date: 2022-12-20
+author: Jonathan Krangel
+tags: [Guide]
+image: /images/blog/cards/transforming-the-modern-revenue.png
+---
+
+The way modern software companies go-to-market is rapidly changing – first party product data is paramount in a product-led company, speciality tools to expedite sales cycles are abound, and RevOps teams are taking center stage in how all of these pieces work together.
+
+In the world of RevOps Jonathan Krangel, Head of Revenue Operations at Retool, is leading the charge. Starting his career in investment banking, he made his way into tech via SalesOps at LinkedIn. Since then he's built up front and back of house experience across smaller startups from success and ops roles at companies like Mode and Brex. Now at Retool, he runs a true RevOps team supporting marketing, sales, success, and support as well as strategy, planning, tools & systems, and variable compensation.
+
+We were so excited to have him join us and even more excited to have him share the key takeaways from his session at Endgame's Product-led Sales Summit.
+
+> The role of RevOps is to manage all the technical complexity and deliver a totally delightful experience to the people that they support
+
+## Challenge of Revops today?
+
+The standard GTM tech stack has moved from monolithic software to lots of specialized point solutions tools that integrate with each other via APIs and middleware like Zapier and Workato. While this means that teams are able to choose the best solution for each individual pain point, ensuring that these tools use a common set of data and play nicely together is a huge architectural challenge. In RevOps, our job is to manage all that complexity and deliver a totally delightful experience to the GTM teams we support.
+
+## What is RevOps?
+
+RevOps is a loaded term that can encompass: sales ops, growth, strategy, marketing ops and more. I joined Retool as the first sales ops person and had the rare opportunity to build out the function from first principles and eventually, to expand the remit to cover all of GTM. My team supports all GTM functions (sales, success, support, marketing) and covers the functional areas of strategy and planning, reporting, and systems, and variable compensation and deal desk.
+
+> "What I learned at a variety of companies is that inevitably you wind up with many different ops people (sales, marketing, success). If those people aren't officially joined together by some kind of structure, they always self organize." - Jonathan Krangel | Head of Revenue Operations, Retool
+
+## Where is RevOps in 2 years?
+
+Elevated to have a true seat at the table, reporting either to CRO, COO, CFO or CEO and with a true 30k foot view across the business. RevOps is still a new concept and there's not a lot of conventional wisdom yet.
+
+> "PLG raises the bar as it's the ultimate cross functional problem. Product, sales, or marketing and more all need to have a hand in solving it. RevOps sits naturally at the intersection of all of the things companies need to get right when delivering a product-led motion" - Jonathan Krangel | Head of Revenue Operations, Retool
+
+## Technical literacy for RevOps is a must as data warehouses are the nerve center of modern businesses
+
+### How does the role of RevOps change as more data is stored at the data warehouse layer?
+
+The modern data warehouse is the clearinghouse for all systems of record. Businesses store and model all data there and a well designed analytics stack can hydrate the GTM systems with the information they need to drive decisions, workflow, and more. It's incumbent upon RevOps to have enough data modeling and data engineering knowledge to be great partners to the Data teams who maintain the analytics stack.
+
+> "SQL literacy is a must have to hire for my team. You need to be able to make sense of the fluid and complex data that a modern GTM machine generates as well as understand downstream the impact of your decisions. We can't operate in a silo with a spreadsheet anymore" - Jonathan Krangel | Head of Revenue Operations, Retool
+
+### Who owns what data and who determines the source of truth?
+
+Analytics owns data infrastructure, but they don't own the data. Second to Product, RevOps generally owns the largest and most complex data sources within the organization. It's our job to be good stewards of the data stack. A core role of RevOps is to communicate the business value of each piece of data to technical teams and own the downstream implications of things like schema changes. In exchange, Data teams give us a relatively wide window to use different types of tools to clean, transform, and integrate to where it's needed.
+
+## Marrying product data and a CRM is not a simple 1:1, RevOps plays a critical role in mapping cleanly
+
+### What's the process that you unify product constructs with GTM constructs?
+
+Many companies underestimate the complexity of writing product data into Salesforce. Doing so without a clear plan and architecture generally leads to hard to maintain systems, inaccurate decision making, and confused reps. Still, properly writing product data into Salesforce can unlock immense value for your teams. I always advise teams to think about the problem in the following way:
+
+**Start by defining, in words, what each GTM object is.** For example, we define an "account" in Salesforce, as "a discrete entity with which we may or may not do business". Each word in that statement informs how we think about key decisions, such as how to handle parent/child relationships and when we create new accounts. This definition made it clear to us that there was no clear analogue to an "account" in our product data model.
+
+**Respect the differences between product and GTM constructs.** Our product, like most SaaS, has an "organization" concept. We write this back into Salesforce with minimal transformation in its own custom object and then have a robust matching process that creates a many-to-one relationship between one account and all relevant organizations. This reflects reality (i.e., one account may have multiple Retool organizations) while respecting the data models of both concepts.
+
+**RevOps must take the lead.** Our unique role at the intersection of the GTM and the rest of our infrastructure means RevOps is best positioned to define how various internal and external constructs relate to one another while keeping things clean and scalable.
+
+### What are you using to do this?
+
+Ten years ago putting data back into Salesforce or other GTM tools was a huge hassle; doing so required someone in engineering to build and maintain a data pipeline. Today, tools like Retool Workflows, Polytomic and Hightouch.io enable Revenue Operations teams to solve this challenge with no or minimal code.
+
+Read more on why PLG companies need more than a CRM to run product-led sales and the complexity between product data constructs and business constructs.
+
+## Balance between build vs. buy where it makes sense for team priorities and time
+
+### You can use Retool to build any application, so what is your approach to the build vs. buy decision?
+
+Retool is a platform that enables teams to build any kind of tool, so our first instinct at Retool is always to solve problems by building solutions in our own product. However, this is not the right approach when the problem being solved is one that we are either not well positioned to understand at a deep level or which is not going to be a differentiator for our business.
+
+For example, Endgame is hugely valuable to our business. It helps our team distill complex and fast moving product data down into actionable signals so we know when Sales should engage with our self service customers. We are experts in our own data and highly opinionated about our customer experience; Endgame's expertise is in the delivery of that data to our reps and the workflows that enable them to be the most efficient. This is why we own the modeling of our data and Endgame owns the UI/UX and the way that data engages with the field.
+
+The Endgame team thinks about this problem every single day and I want to benefit from their experience. There's no question in my mind that we would do an inferior job by trying to develop and maintain this functionality internally.
+
+### Example of what you would build?
+
+We build when we have a strong point of view about the exact way we want to do something or when the use case is proprietary to us. For example we have a very specific way we want to run regular forecast and pipeline meetings. We built Retool on top of our Salesforce architecture to run weekly forecast meetings exactly how we want to. This gives us much more nuanced control vs. using an off-the-shelf tool like Clari.
+
+## Flexible compensation plans are critical to allow experimentation in the product-led world
+
+### How do you build variable compensation plans that are scalable but allow for experimentation?
+
+The product-led world is ever changing and so approaching variable compensation in a way that allows safe experimentation is key. I've had a lot of success with a three tiered system:
+
+**Compensation Plans:** These are fixed (annual or quarterly) and are the most rigid. These define how reps make their OTE (on-target earnings).
+
+**SPIFs:** Special incentives that enable us to test new ideas or apply short term incentives. These are managed by Revenue Operations and the most successful ideas get promoted into Compensation Plans in the following cycle.
+
+**Manager Discretion:** Managers are given a small budget that they can use to test local incentives with their teams with minimal overhead / approvals.
+
+We have tooling built in Retool that enables our sales leadership and Revenue Operations to manage all of the above in highly automated, transparent and auditable ways. These workflows integrate with our variable compensation system to ensure all payouts, regardless of source, are captured and above board.
+
+## Rapid fire Q&A
+
+### What powers your GTM function?
+
+Salesforce is our GTM system of record and is supported by a constellation of tools:
+
+- **Endgame** - enables our reps to distill our self service product data down to actionable insights so we know when and how to engage these customers in a sales conversation
+- **RevOps.io** - our CPQ and deal desk platform
+- **Outreach** - for rep-driven email automation
+- **Retool Workflows, Polytomic & Hightouch** - to move the data between systems such as the data warehouse and Salesforce
+- **BigQuery** - as the data warehouse for all systems of record with all modeling defined in DBT
+- And of course a variety of Retool apps that support lots of use cases such as data observability, forecasting, pipeline management, and much more.
+
+### How do you build in a way that can be agile with changing business needs?
+
+While process automation is key to enabling scale, it's critical to resist the urge to jump straight to coding or sophisticated systems. Focus instead on using low-code or declarative tools to express business processes. Business needs evolve constantly and remaining agile is key.
+
+This is why tools like Retool or Salesforce Lightning Flow are key; they allow teams to get most of the benefits of process automation while keeping the time and effort to develop/troubleshoot low. This allows the team to stand up durable processes quickly, and take them down or modify them as business needs change without fear of lots of sunk development costs.
+
+### Differences in hiring generalist vs specialist?
+
+Younger companies need generalists who are analytical and process driven paired with folks who have seen what "great" looks like at scale. Companies get bigger and naturally less agile, business processes start to stabilize and it's important to focus more on specialists. The tipping point is different for every company, but in my experience this transition begins to take place at SaaS companies once they reach ~200-300 employees.
+
+For example, Retool hired a variable compensation expert as the first specialist on the Revenue Operations team. I made this decision because of how critically important it is to employee experience that we get compensation right. I generally try to hire 6-12 months ahead of anticipated need to give ample time to source, hire and onboard before an emergency situation develops.
+
+*Check out more takeaways from the Product-led Sales Summit, and follow Jonathan Krangel for more of his insights! A huge thank you again to Jonathan for his time, insight, and wisdom.*

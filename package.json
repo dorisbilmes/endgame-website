@@ -4,12 +4,17 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:clean": "rm -rf .next && next dev",
     "build": "next build",
+    "build:clean": "rm -rf .next && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "clean": "rm -rf .next node_modules/.cache"
   },
   "dependencies": {
-    "next": "16.0.10",
+    "gray-matter": "^4.0.3",
+    "next": "^15.5.9",
+    "next-mdx-remote": "^5.0.0",
     "react": "19.2.1",
     "react-dom": "19.2.1"
   },
@@ -19,7 +24,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.0.10",
+    "eslint-config-next": "^15.5.9",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
