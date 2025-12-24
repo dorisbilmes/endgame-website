@@ -31,7 +31,7 @@ export function Tabs({
 }: TabsProps) {
   const containerStyles = {
     default: "flex flex-col gap-4",
-    compact: "grid grid-cols-1 md:grid-cols-4 gap-4",
+    compact: "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4",
   };
 
   return (
@@ -84,7 +84,7 @@ function TabItem({
         <p className="text-[var(--color-text-secondary)]">{tab.description}</p>
       )}
       {showProgress && variant === "default" && (
-        <div className="absolute bottom-6 left-6 right-6 h-px bg-white/10">
+        <div className="mt-6 h-px bg-white/10">
           <div
             className="h-full bg-[var(--color-accent)] animate-[progress_5s_linear]"
             style={{ width: "100%" }}

@@ -18,8 +18,8 @@ export function CTASection({
   return (
     <section className="py-24 bg-[var(--color-canvas)] w-full">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-semibold text-[var(--color-text)] mb-6">{title}</h2>
-        <p className="text-lg text-[var(--color-text-secondary)] max-w-2xl mx-auto mb-6">{description}</p>
+        <h2 className="text-[24px] lg:text-[32px] font-semibold text-[var(--color-text)] mb-6">{title}</h2>
+        <p className="text-md text-[var(--color-text-secondary)] max-w-2xl mx-auto mb-6">{description}</p>
         <Button href={buttonHref}>
           {buttonText}
         </Button>

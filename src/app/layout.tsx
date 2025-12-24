@@ -34,7 +34,9 @@ export default function RootLayout({
       >
         <Navbar />
         <main className="pt-16 flex-grow flex flex-col items-center w-full">
-          <div className="container-app">{children}</div>
+          <div className="container-app">
+            {children}
+          </div>
         </main>
         <Footer />
       </body>

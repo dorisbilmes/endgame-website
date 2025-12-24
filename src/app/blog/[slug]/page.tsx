@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getContentBySlug, getContentSlugs } from "@/lib/content";
@@ -30,10 +29,6 @@ export default async function BlogPost({ params }: Props) {
 
   return (
     <article className="py-24 max-w-3xl mx-auto">
-      <Link href="/blog" className="text-[var(--color-accent)] hover:underline text-sm mb-8 inline-block">
-        ← Back to blog
-      </Link>
-
       <header className="mb-12">
         <div className="flex items-center gap-2 text-sm text-[var(--color-text-secondary)] mb-4">
           <time>

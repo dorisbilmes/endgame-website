@@ -38,7 +38,7 @@ export const mdxComponents = {
     <pre className="bg-[var(--color-surface-2)] p-4 rounded-[var(--radius-card)] overflow-x-auto my-4 border border-[var(--color-border)]" {...props} />
   ),
   a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <a className="text-[var(--color-accent)] hover:underline" {...props} />
+    <a className="text-white underline underline-offset-2 hover:opacity-80 transition-opacity" {...props} />
   ),
   hr: () => <hr className="border-[var(--color-border)] my-8" />,
   img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (

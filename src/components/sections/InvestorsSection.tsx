@@ -7,14 +7,14 @@ export function InvestorsSection() {
   return (
     <section className="py-24 bg-[var(--color-canvas)] w-full">
       <div className="mb-16 max-w-2xl">
-        <h2 className="text-3xl font-semibold text-[var(--color-text)] mb-4">
+        <h2 className="text-[24px] lg:text-[32px] font-semibold text-[var(--color-text)] mb-4">
           Backed by world class investors
         </h2>
-        <p className="text-lg text-[var(--color-text-secondary)]">
+        <p className="text-md text-[var(--color-text-secondary)]">
           We raised $47.5M from top tier VCs as well as executives from companies like Zoom, Airtable, Stripe, and Notion.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
         {investors.map((inv) => (
           <Card key={inv.id} variant="default" className="overflow-hidden">
             <div className="aspect-square relative overflow-hidden bg-zinc-800">

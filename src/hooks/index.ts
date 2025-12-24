@@ -6,4 +6,5 @@
  */
 
 export { useAutoRotate } from "./useAutoRotate";
+export { useIsMobile } from "./useIsMobile";
 

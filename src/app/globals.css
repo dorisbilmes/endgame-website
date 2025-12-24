@@ -42,14 +42,13 @@
   --spacing-app: var(--app-padding);
 }
 
-body {
-  background: var(--color-canvas);
-  color: var(--foreground);
+* {
   font-family: var(--font-inter), "Inter", "Inter Placeholder", sans-serif;
 }
 
-/* Ensure all text elements use the global font */
-p, h1, h2, h3, h4, h5, h6, span, div, a, button, input, textarea, select {
+body {
+  background: var(--color-canvas);
+  color: var(--foreground);
   font-family: var(--font-inter), "Inter", "Inter Placeholder", sans-serif;
 }
 
@@ -60,10 +59,24 @@ p, h1, h2, h3, h4, h5, h6, span, div, a, button, input, textarea, select {
 .container-app {
   width: 100%;
   max-width: var(--app-max-width);
-  padding-left: var(--app-padding);
-  padding-right: var(--app-padding);
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .container-app {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-app {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
 }
 
 /* Section wrapper - consistent vertical rhythm */
@@ -104,20 +117,14 @@ p, h1, h2, h3, h4, h5, h6, span, div, a, button, input, textarea, select {
   }
 }
 
-/* 3-up: 1 col → sm:2 col → lg:3 col (for cards, case studies) */
+/* 3-up: 1 col → 3 col at 1200px (skip 2-col to avoid awkward 2+1 wrap) */
 .grid-3up {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: var(--grid-gap);
 }
 
-@media (min-width: 640px) {
-  .grid-3up {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .grid-3up {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -181,6 +188,18 @@ p, h1, h2, h3, h4, h5, h6, span, div, a, button, input, textarea, select {
 }
 
 .card-glow:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+/* Card without gradient */
+.card-flat {
+  background-color: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  transition: border-color 0.3s ease;
+}
+
+.card-flat:hover {
   border-color: rgba(59, 130, 246, 0.5);
 }
 
@@ -317,10 +336,12 @@ h2.section-title {
 }
 
 .prose a {
-  color: var(--color-accent-hover);
+  color: #ffffff;
   text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 0.2s ease;
 }
 
 .prose a:hover {
-  color: #93c5fd;
+  opacity: 0.8;
 }

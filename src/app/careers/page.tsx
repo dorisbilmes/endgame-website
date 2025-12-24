@@ -53,13 +53,7 @@ export default function CareersPage() {
     <>
       {/* Hero Section */}
       <HeroSection
-        title={
-          <>
-            Hi, we're Endgame.
-            <br />
-            We'd love for you to join us.
-          </>
-        }
+        title="Careers"
         description="We're a team of passionate professionals helping sellers become trusted advisors their buyers rely on."
         buttonText="See open roles"
         buttonHref="#open-roles"
@@ -79,7 +73,8 @@ export default function CareersPage() {
         <p className="text-center text-base text-[var(--color-text-secondary)] mb-10">
           Backed by world-class investors
         </p>
-        <div className="flex gap-4">
+        {/* Desktop: Flex row with custom rounded corners */}
+        <div className="hidden lg:flex gap-4">
           {investors.map((investor, i) => (
             <div
               key={investor.id}
@@ -95,6 +90,21 @@ export default function CareersPage() {
             </div>
           ))}
         </div>
+        {/* Mobile/Tablet: Responsive grid */}
+        <div className="grid grid-cols-2 gap-4 lg:hidden">
+          {investors.map((investor) => (
+            <div
+              key={investor.id}
+              className="flex items-center justify-center h-[90px] sm:h-[110px] bg-[var(--color-surface-2)] border border-[var(--color-border)] rounded-lg"
+            >
+              <img
+                src={investor.firmLogo}
+                alt={investor.firm}
+                className="h-6 sm:h-8 w-auto brightness-0 invert opacity-80"
+              />
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Values Carousel */}
@@ -102,7 +112,7 @@ export default function CareersPage() {
 
       {/* Open Roles */}
       <section id="open-roles" className="py-24 bg-[var(--color-canvas)] w-full">
-        <h2 className="text-3xl md:text-4xl font-semibold text-[var(--color-text)] mb-12">
+        <h2 className="text-[24px] lg:text-[32px] font-semibold text-[var(--color-text)] mb-12">
           Open roles
         </h2>
 

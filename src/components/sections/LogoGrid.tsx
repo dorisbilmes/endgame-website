@@ -8,7 +8,19 @@ export function LogoGrid() {
       <p className="text-center text-base text-[var(--color-text-secondary)] mb-10">
         Trusted everyday by the world's leading revenue organizations
       </p>
-      <div className="flex gap-4">
+      {/* Mobile/Tablet: 2-column grid */}
+      <div className="grid grid-cols-2 gap-3 xl:hidden">
+        {clientLogos.map((logo) => (
+          <div 
+            key={logo.name} 
+            className="flex items-center justify-center h-[90px] bg-[var(--color-surface-2)] border border-[var(--color-border)] rounded-xl"
+          >
+            <img src={logo.image} alt={logo.label} className={`${logo.size} w-auto object-contain`} />
+          </div>
+        ))}
+      </div>
+      {/* Desktop: horizontal row */}
+      <div className="hidden xl:flex gap-4">
         {clientLogos.map((logo, i) => (
           <div 
             key={logo.name} 

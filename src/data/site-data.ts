@@ -27,7 +27,7 @@ export const mainNavLinks: NavLink[] = [
   { label: "About", href: "/about" },
   { label: "Careers", href: "/careers" },
   { label: "Blog", href: "/blog" },
-  { label: "Case Studies", href: "/case-studies" },
+  { label: "Customers", href: "/case-studies" },
 ];
 
 export const footerLinkGroups: FooterLinkGroup[] = [

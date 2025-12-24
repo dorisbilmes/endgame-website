@@ -17,19 +17,26 @@ This post is second in a series on how AI can help with various aspects of resea
 
 In our previous article, we walked you through using Perplexity AI to get some basics about a company really quickly. Now we want to help you learn from more complex, time consuming sources such as company financials.
 
-Analyzing a company's 10-K is a no-brainer for a savvy sales rep. A 10-K—which is published yearly by publicly traded companies—is packed with info about a company's financials and strategies, but it's also a beast to read. Lucky for us, GenAI tooling like ChatGPT is here to help! We are using ChatGPT instead of Perplexity which was used in the previous post on company research, because while Perplexity is really good at generating and analyzing Google-style search results using general public web info, GPT is excellent at analyzing a specific file or dataset. In this case, what we want to do is give GPT the 10-K and ask it to go to town.
+Analyzing a company's 10-K is a no-brainer for a savvy sales rep. A 10-K—which is published yearly by publicly traded companies—is packed with info about a company's financials and strategies, but it's also a beast to read. Lucky for us, GenAI tooling like ChatGPT is here to help! We are using [ChatGPT](https://chatgpt.com/?oai-dm=1) instead of Perplexity which was used in the previous post on company research, because while Perplexity is really good at generating and analyzing Google-style search results using general public web info, GPT is excellent at analyzing a specific file or dataset. In this case, what we want to do is give GPT the 10-K and ask it to go to town.
 
 ## Analysis walkthrough
 
 In continuation from our last article, we're a sales rep at Endgame learning about Zscaler, a new prospect in our book. Like I said, 10-Ks can be a beast—Zscaler's 2023 10-K is 157 pages (!!)—which is where ChatGPT comes into play. Let's give this a spin:
 
-1. Download the latest 10-K from Zscaler's investor relations website. Most 10-Ks are readily Google-able—and if not, ALL are available via the SEC (more on this later).
+![analyzing a 10 k with chatgpt](/images/blog/content/analyzing-a-10-k-with-chatgpt-01.png)
+
+![analyzing a 10 k with chatgpt](/images/blog/content/analyzing-a-10-k-with-chatgpt-02.png)
+
+1. Download the latest 10-K from Zscaler's [investor relations website](https://ir.zscaler.com/financial-information/sec-filings). Most 10-Ks are readily Google-able—and if not, ALL are available via the SEC (more on this later).
 2. Kick off a new chat with in ChatGPT using GPT4—note that this does also require ChatGPT plus—and upload the 10-K.
 3. Give some context, and ask away!
 
 There's enough content floating around crafting the ultimate prompt that I wont delve into too much detail there, but one easy way to prevent GPT4 from speculating too wildly (i.e., hallucinating) is to simply ask it to give you a detailed citation of where the answer was found in the 10-K.
 
 A few quick examples of context (along with sample prompts) in a 10-K that can help someone work deals:
+
+![analyzing-a-10-k-with-chatgpt](/images/blog/content/analyzing-a-10-k-with-chatgpt-01.png)
+
 
 **Business Overview:** Understand the company's characteristics and priorities to align your offerings. *[Give me an overview of the company's business model.]*
 
@@ -50,8 +57,11 @@ One of my favorite moves is to ask about risks highlighted in the 10-K and could
 A few other fun things to note:
 
 - While we simply leveraged GPT4 in this case, it's also quite simple to build out a custom GPT with some pre-canned instructions that guide the responses. This is an easy way to speed things up if you're doing this on the regular. Hit us up if you want to learn more about this technique!
+
+![analyzing-a-10-k-with-chatgpt](/images/blog/content/analyzing-a-10-k-with-chatgpt-02.png)
+
 - There are a number of custom GPTs that already exist that can analyze 10-Ks. They seem pretty solid—but sometimes come with some downstream costs for the underlying service.
-- 10-K are provided to the SEC annually, and are made available via EDGAR.
+- 10-K are provided to the SEC annually, and are made available via [EDGAR](https://www.sec.gov/edgar/searchedgar/companysearch).
 - EDGAR's API provides programmatic access to all filings (including 10-K) if you don't feel like downloading each 10-K from a book of business individually for analysis.
 
 GenAI truly does provide superpowers to reps that are willing to dive in. A 10-K is a great source, but keep in mind that the same approach can be taken for any relevant data (e.g., earnings call transcripts, CEO podcast transcripts, etc)—we'll be touching on those soon.

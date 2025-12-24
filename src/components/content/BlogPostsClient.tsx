@@ -50,7 +50,7 @@ export function BlogPostsClient({ posts }: Props) {
       </p>
 
       {/* Blog Post Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 min-[1200px]:grid-cols-3 gap-6">
         {paginatedPosts.map((post) => (
           <BlogPostCard key={post.slug} post={post} />
         ))}

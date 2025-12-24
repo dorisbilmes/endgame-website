@@ -7,7 +7,7 @@
 
 import Link from "next/link";
 
-type CardVariant = "default" | "glow" | "surface";
+type CardVariant = "default" | "glow" | "flat" | "surface";
 
 interface CardProps {
   children: React.ReactNode;
@@ -22,6 +22,7 @@ const variantStyles: Record<CardVariant, string> = {
   default:
     "bg-[var(--color-surface-2)] border border-[var(--color-border)] rounded-[var(--radius-card)]",
   glow: "card-glow",
+  flat: "card-flat",
   surface:
     "bg-[var(--color-surface-1)] border border-[var(--color-border)] rounded-[var(--radius-card)]",
 };

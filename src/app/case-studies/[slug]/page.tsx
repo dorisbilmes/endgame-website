@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getContentBySlug, getContentSlugs } from "@/lib/content";
@@ -30,10 +29,6 @@ export default async function CaseStudyPage({ params }: Props) {
 
   return (
     <article className="py-24 max-w-3xl mx-auto">
-      <Link href="/case-studies" className="text-[var(--color-accent)] hover:underline text-sm mb-8 inline-block">
-        ← Back to case studies
-      </Link>
-
       <header className="mb-12">
         <span className="text-sm font-bold tracking-widest text-[var(--color-accent)] uppercase mb-4 block">
           {study.frontmatter.company}

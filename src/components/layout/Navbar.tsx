@@ -11,10 +11,16 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > SCROLL_THRESHOLD);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > SCROLL_THRESHOLD);
+      // Close mobile menu immediately when scrolling begins
+      if (mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [mobileMenuOpen]);
 
   return (
     <>
@@ -23,7 +29,7 @@ export function Navbar() {
           scrolled || mobileMenuOpen
             ? "bg-[rgba(5,20,33,0.8)] backdrop-blur-[4px]"
             : "bg-transparent"
-        } ${scrolled && !mobileMenuOpen ? "border-b border-[var(--color-border-light)]" : ""}`}
+        } ${scrolled && !mobileMenuOpen ? "shadow-[0_1px_0_0_#142332]" : ""}`}
       >
         <div className="container-app h-14 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
@@ -35,7 +41,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8">
             {mainNavLinks.map((link) => (
               <Link
                 key={link.href}
@@ -48,11 +54,11 @@ export function Navbar() {
           </div>
 
           {/* Desktop Buttons */}
-          <div className="hidden md:flex items-center gap-3">
-            <Button href="#" variant="secondary" size="sm">
+          <div className="hidden lg:flex items-center gap-3">
+            <Button href="#" variant="secondary" size="sm" className="rounded-lg">
               Go to app
             </Button>
-            <Button href="#" variant="primary" size="sm">
+            <Button href="#" variant="primary" size="sm" className="rounded-lg">
               Sign up
             </Button>
           </div>
@@ -60,84 +66,73 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden flex items-center justify-center w-10 h-10 text-[var(--color-text)]"
+            className="lg:hidden flex items-center justify-center w-10 h-10 text-[var(--color-text)]"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
-            {mobileMenuOpen ? (
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M18 6L6 18M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
+            <div className="relative w-5 h-4 flex flex-col justify-between">
+              {/* Top line - rotates to form X */}
+              <span
+                className={`block h-0.5 w-full bg-current rounded-full transition-all duration-300 ease-in-out origin-center ${
+                  mobileMenuOpen ? "rotate-45 translate-y-[7px]" : ""
+                }`}
+              />
+              {/* Bottom line - rotates to form X */}
+              <span
+                className={`block h-0.5 w-full bg-current rounded-full transition-all duration-300 ease-in-out origin-center ${
+                  mobileMenuOpen ? "-rotate-45 -translate-y-[7px]" : ""
+                }`}
+              />
+            </div>
           </button>
         </div>
       </nav>
 
       {/* Mobile Menu Dropdown - Outside nav for proper layering */}
-      {mobileMenuOpen && (
-        <div
-          className="fixed top-14 left-0 right-0 z-40 md:hidden border-b border-[var(--color-border-light)]"
-          style={{
-            backgroundColor: "rgba(5, 20, 33, 0.85)",
-            backdropFilter: "blur(4px)",
-          }}
-        >
-          <div className="p-6 flex flex-col gap-6">
-            {/* Navigation Links */}
-            <div className="flex flex-col items-center gap-4">
-              {mainNavLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-base font-medium text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+      <div
+        className={`fixed top-14 left-0 right-0 z-40 lg:hidden bg-[rgba(5,20,33,0.8)] backdrop-blur-[4px] transition-all duration-300 ease-in-out ${
+          mobileMenuOpen
+            ? "opacity-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 -translate-y-2 pointer-events-none"
+        }`}
+      >
+        <div className="py-6 pb-6 flex flex-col items-center">
+          {/* Navigation Links */}
+          <div className="flex flex-col items-center gap-4">
+            {mainNavLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-base font-medium text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors text-center"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
 
-            {/* Mobile Buttons */}
-            <div className="flex gap-3">
-              <Button
-                href="#"
-                variant="secondary"
-                size="sm"
-                className="flex-1 justify-center rounded-lg"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Go to app
-              </Button>
-              <Button
-                href="#"
-                variant="primary"
-                size="sm"
-                className="flex-1 justify-center rounded-lg"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Sign up
-              </Button>
-            </div>
+          {/* Mobile Buttons */}
+          <div className="flex justify-center gap-4 mt-6 pt-6 border-t border-[#202d3c]">
+            <Button
+              href="#"
+              variant="secondary"
+              size="sm"
+              className="w-45 justify-center rounded-lg"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Go to app
+            </Button>
+            <Button
+              href="#"
+              variant="primary"
+              size="sm"
+              className="w-45 justify-center rounded-lg"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Sign up
+            </Button>
           </div>
         </div>
-      )}
+      </div>
     </>
   );
 }
