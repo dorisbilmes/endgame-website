@@ -105,7 +105,7 @@ function ValueCard({ value }: { value: Value }) {
         <h3 className="text-[18px] lg:text-[20px] font-semibold text-[var(--color-text)] mb-3">
           {value.title}
         </h3>
-        <p className="text-[16px]  text-[var(--color-text-secondary)] leading-relaxed">
+        <p className="text-[16px] text-[var(--color-text-secondary)] leading-relaxed">
           {value.description}
         </p>
       </div>

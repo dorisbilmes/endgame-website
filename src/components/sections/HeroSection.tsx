@@ -9,6 +9,7 @@ interface HeroSectionProps {
   buttonHref?: string;
   videoSrc?: string | null;
   children?: React.ReactNode;
+  align?: "left" | "center";
 }
 
 export function HeroSection({
@@ -18,14 +19,17 @@ export function HeroSection({
   buttonHref = "#",
   videoSrc = "/images/home/endgame-product-video.mp4",
   children,
+  align = "left",
 }: HeroSectionProps) {
+  const isCentered = align === "center";
+
   return (
-    <section className="pt-16 sm:pt-20 lg:pt-30 pb-0 text-left relative overflow-visible w-full">
-      <div className="flex flex-col items-start w-full max-w-full">
-        <h1 className="font-sans text-[32px] lg:text-[40px] font-medium tracking-tight leading-tight text-[var(--color-text)] mb-4 max-w-[800px]">
+    <section className={`pt-16 sm:pt-20 lg:pt-30 pb-0 relative overflow-visible w-full ${isCentered ? "text-center" : "text-left"}`}>
+      <div className={`flex flex-col w-full max-w-full ${isCentered ? "items-center" : "items-start"}`}>
+        <h1 className={`font-sans text-[32px] lg:text-[40px] font-medium tracking-tight leading-tight text-[var(--color-text)] mb-4 max-w-[800px] ${isCentered ? "mx-auto" : ""}`}>
           {title}
         </h1>
-        <p className="text-base text-[var(--color-text-secondary)] mb-9 max-w-[600px] leading-relaxed">
+        <p className={`text-base text-[var(--color-text-secondary)] mb-9 max-w-[600px] leading-relaxed ${isCentered ? "mx-auto" : ""}`}>
           {description}
         </p>
         {buttonText && (

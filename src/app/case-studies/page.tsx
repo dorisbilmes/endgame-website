@@ -10,6 +10,24 @@ export const metadata: Metadata = {
 
 const customerQuotes = [
   {
+    image: "/images/logos/jordan.png",
+    quote: "Endgame has become the OS for our revenue team, with over 80% adoption. We've replaced consumer AI tools for everything from meeting prep to customer presentations to business analysis. We’re on a mission to be an AI-native company and Endgame has been a huge accelerant.",
+    name: "Jordan Van Horn",
+    title: "Co-founder, COO at Monte Carlo",
+  },
+  {
+    image: "/images/logos/austin.png",
+    quote: "What used to take an entire account team off what they were doing for hours, Endgame did in a few minutes. Within 20 minutes, we're handing something to an executive and they're making introductions.",
+    name: "Austin Johnsey",
+    title: "Director of GTM Systems at BetterUp",
+  },
+  {
+    image: "/images/logos/john.png",
+    quote: "We evaluated over a dozen AI tools. Almost all of them focused on low-level tasks and email automation, but Endgame was different. Their entire approach is about getting the knowledge layer right, which gives us a level of accuracy we couldn't find anywhere else.",
+    name: "John Messina",
+    title: "VP Revenue at Hex",
+  },
+  {
     image: "/images/logos/avtar.png",
     quote: "Most AI vendors we evaluated were shallow on the data side. Endgame integrates deeply with Salesforce, Gong, and our enablement content, which gives us data quality our teams actually trust.",
     name: "Avtar Varma",
@@ -69,7 +87,7 @@ export default function CaseStudiesPage() {
           {/* Customer Quotes */}
           <div className="grid grid-cols-1 min-[1200px]:grid-cols-3 gap-6 w-full">
             {customerQuotes.map((customer) => (
-              <div key={customer.name} className="card-glow p-8 flex flex-col gap-6">
+              <div key={customer.name} className="card-glow-static p-8 flex flex-col gap-6">
                 <p className="text-base text-[var(--color-text-secondary)] leading-relaxed italic">
                   "{customer.quote}"
                 </p>

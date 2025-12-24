@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Navbar, Footer } from "@/components/layout";
+import { MainLayout } from "./MainLayout";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -32,13 +32,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${inter.variable} ${geistMono.variable} antialiased bg-background text-foreground min-h-screen flex flex-col font-sans`}
       >
-        <Navbar />
-        <main className="pt-16 flex-grow flex flex-col items-center w-full">
-          <div className="container-app">
-            {children}
-          </div>
-        </main>
-        <Footer />
+        <MainLayout>{children}</MainLayout>
       </body>
     </html>
   );

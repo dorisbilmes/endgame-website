@@ -58,7 +58,7 @@ export function Navbar() {
             <Button href="#" variant="secondary" size="sm" className="rounded-lg">
               Go to app
             </Button>
-            <Button href="#" variant="primary" size="sm" className="rounded-lg">
+            <Button href="/signup" variant="primary" size="sm" className="rounded-lg">
               Sign up
             </Button>
           </div>
@@ -122,7 +122,7 @@ export function Navbar() {
               Go to app
             </Button>
             <Button
-              href="#"
+              href="/signup"
               variant="primary"
               size="sm"
               className="w-45 justify-center rounded-lg"

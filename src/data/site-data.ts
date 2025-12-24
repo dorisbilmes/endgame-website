@@ -51,9 +51,9 @@ export const footerLinkGroups: FooterLinkGroup[] = [
 ];
 
 export const socialLinks: SocialLink[] = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/endgame-ai", external: true },
-  { label: "X/Twitter", href: "https://twitter.com/endgame", external: true },
-  { label: "Contact Us", href: "/contact", external: false },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/endgamelabs/", external: true },
+  { label: "X/Twitter", href: "https://x.com/endgamelabs?lang=en", external: true },
+  { label: "Contact Us", href: "mailto:hello@endgame.io", external: true },
 ];
 
 // =============================================================================

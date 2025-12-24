@@ -14,7 +14,7 @@
   --color-accent-hover: #60a5fa;
   
   /* Layout */
-  --app-max-width: 1250px;
+  --app-max-width: 1440px;
   --app-padding: 1.75rem;
   
   /* Spacing Scale */
@@ -189,6 +189,14 @@ body {
 
 .card-glow:hover {
   border-color: rgba(59, 130, 246, 0.5);
+}
+
+/* Static Card without hover */
+.card-glow-static {
+  background: radial-gradient(circle, rgba(50, 150, 150, 0.2) 0%, transparent 70%);
+  background-color: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
 }
 
 /* Card without gradient */
