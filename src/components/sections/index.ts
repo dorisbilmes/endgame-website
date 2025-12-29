@@ -11,6 +11,7 @@ export { FeaturesSection } from "./FeaturesSection";
 export { FeatureTabs } from "./FeatureTabs";
 export { CaseStudiesSection } from "./CaseStudiesSection";
 export { ContentCards } from "./ContentCards";
+export { ResourcesSection } from "./ResourcesSection";
 export { CTASection } from "./CTASection";
 export { TeamSection } from "./TeamSection";
 export { InvestorsSection } from "./InvestorsSection";

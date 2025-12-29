@@ -75,6 +75,12 @@ export interface FeaturedBlogPost {
   slug: string;
 }
 
+export interface ResourceCard {
+  title: string;
+  description: string;
+  href: string;
+}
+
 // =============================================================================
 // FEATURE DATA
 // =============================================================================

@@ -10,37 +10,37 @@ export const metadata: Metadata = {
 
 const customerQuotes = [
   {
-    image: "/images/logos/jordan.png",
-    quote: "Endgame has become the OS for our revenue team, with over 80% adoption. We've replaced consumer AI tools for everything from meeting prep to customer presentations to business analysis. We’re on a mission to be an AI-native company and Endgame has been a huge accelerant.",
+    image: "/images/testimonials/jordan.png",
+    quote: "Endgame has become the OS for our revenue team, with over 80% adoption. We've replaced consumer AI tools for everything from meeting prep to customer presentations to business analysis. We're on a mission to be an AI-native company and Endgame has been a huge accelerant.",
     name: "Jordan Van Horn",
     title: "Co-founder, COO at Monte Carlo",
   },
   {
-    image: "/images/logos/austin.png",
+    image: "/images/testimonials/austin.png",
     quote: "What used to take an entire account team off what they were doing for hours, Endgame did in a few minutes. Within 20 minutes, we're handing something to an executive and they're making introductions.",
     name: "Austin Johnsey",
     title: "Director of GTM Systems at BetterUp",
   },
   {
-    image: "/images/logos/john.png",
+    image: "/images/testimonials/john.png",
     quote: "We evaluated over a dozen AI tools. Almost all of them focused on low-level tasks and email automation, but Endgame was different. Their entire approach is about getting the knowledge layer right, which gives us a level of accuracy we couldn't find anywhere else.",
     name: "John Messina",
     title: "VP Revenue at Hex",
   },
   {
-    image: "/images/logos/avtar.png",
+    image: "/images/testimonials/avtar.png",
     quote: "Most AI vendors we evaluated were shallow on the data side. Endgame integrates deeply with Salesforce, Gong, and our enablement content, which gives us data quality our teams actually trust.",
     name: "Avtar Varma",
     title: "VP of Global RevOps at Benchling",
   },
   {
-    image: "/images/logos/matt-baker.png",
+    image: "/images/testimonials/matt-baker.png",
     quote: "Endgame is the biggest shift in sales tech we've seen in the last decade, at least since CRM. In our first 90 days, we automated over 400 account plans, leading to a 2.5x increase in pipeline generation versus the prior year.",
     name: "Matt Baker",
     title: "VP of GTM Strategy at Accuris",
   },
   {
-    image: "/images/logos/julio.png",
+    image: "/images/testimonials/julio.png",
     quote: "Every meeting at Scale is extremely high stakes—each could be worth tens of millions. Synthesizing all our account context and validating our strategy through Endgame before walking in is critical.",
     name: "Julio Bermúdez",
     title: "Global VP of GTM, Enterprise at Scale",

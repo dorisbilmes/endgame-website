@@ -5,6 +5,7 @@ import {
   FeatureTabs,
   CaseStudiesSection,
   ContentCards,
+  ResourcesSection,
   CTASection,
 } from "@/components/sections";
 
@@ -17,6 +18,7 @@ export default function Home() {
       <FeatureTabs />
       <CaseStudiesSection />
       <ContentCards />
+      <ResourcesSection />
       <CTASection />
     </>
   );

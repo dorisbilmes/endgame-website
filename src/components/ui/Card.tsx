@@ -13,6 +13,7 @@ interface CardProps {
   children: React.ReactNode;
   variant?: CardVariant;
   href?: string;
+  external?: boolean;
   className?: string;
   onClick?: () => void;
   as?: "div" | "article";
@@ -31,6 +32,7 @@ export function Card({
   children,
   variant = "default",
   href,
+  external,
   className = "",
   onClick,
   as: Component = "div",
@@ -38,6 +40,18 @@ export function Card({
   const combinedStyles = `${variantStyles[variant]} ${className}`;
 
   if (href) {
+    if (external) {
+      return (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${combinedStyles} group`}
+        >
+          {children}
+        </a>
+      );
+    }
     return (
       <Link href={href} className={`${combinedStyles} group`}>
         {children}

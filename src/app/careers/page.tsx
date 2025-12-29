@@ -23,28 +23,28 @@ const openRoles = [
     team: "Engineering",
     location: "Remote",
     type: "Full-Time",
-    href: "#",
+    href: "https://jobs.ashbyhq.com/Endgame/57481233-a963-445f-b0c9-7d26849fd9de",
   },
   {
     title: "Forward Deployed Engineer",
     team: "Engineering",
     location: "Remote",
     type: "Full-Time",
-    href: "#",
+    href: "https://jobs.ashbyhq.com/Endgame/a33bb65f-ab99-482a-a91f-7e04215eb15a",
   },
   {
     title: "Founding Product Marketer",
     team: "GTM",
     location: "Bay Area",
     type: "Full-Time",
-    href: "#",
+    href: "https://jobs.ashbyhq.com/Endgame/295da6d5-bd4f-46dc-a028-ac8feee67343",
   },
   {
     title: "Senior Account Executive",
     team: "GTM",
     location: "Bay Area",
     type: "Full-Time",
-    href: "#",
+    href: "https://jobs.ashbyhq.com/Endgame/94bdec63-eb29-46bf-9fe7-5da7775328ae",
   },
 ];
 
@@ -125,9 +125,12 @@ export default function CareersPage() {
             {openRoles
               .filter((role) => role.team === "Engineering")
               .map((role) => (
-                <div
+                <Link
                   key={role.title}
-                  className="flex items-center justify-between p-6 bg-[var(--color-surface-2)] border border-[var(--color-border)] rounded-[var(--radius-card)] hover:border-[var(--color-accent)]/50 transition-colors"
+                  href={role.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-6 bg-[var(--color-surface-2)] border border-[var(--color-border)] rounded-[var(--radius-card)] hover:border-[var(--color-accent)]/50 transition-colors cursor-pointer"
                 >
                   <div>
                     <h4 className="text-lg font-medium text-[var(--color-text)] mb-1">
@@ -137,13 +140,10 @@ export default function CareersPage() {
                       {role.type} · {role.location}
                     </p>
                   </div>
-                  <Link
-                    href={role.href}
-                    className="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] font-medium text-sm flex items-center gap-1 transition-colors"
-                  >
+                  <span className="text-[var(--color-accent)] font-medium text-sm flex items-center gap-1">
                     Apply →
-                  </Link>
-                </div>
+                  </span>
+                </Link>
               ))}
           </div>
         </div>
@@ -157,9 +157,12 @@ export default function CareersPage() {
             {openRoles
               .filter((role) => role.team === "GTM")
               .map((role) => (
-                <div
+                <Link
                   key={role.title}
-                  className="flex items-center justify-between p-6 bg-[var(--color-surface-2)] border border-[var(--color-border)] rounded-[var(--radius-card)] hover:border-[var(--color-accent)]/50 transition-colors"
+                  href={role.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-6 bg-[var(--color-surface-2)] border border-[var(--color-border)] rounded-[var(--radius-card)] hover:border-[var(--color-accent)]/50 transition-colors cursor-pointer"
                 >
                   <div>
                     <h4 className="text-lg font-medium text-[var(--color-text)] mb-1">
@@ -169,13 +172,10 @@ export default function CareersPage() {
                       {role.type} · {role.location}
                     </p>
                   </div>
-                  <Link
-                    href={role.href}
-                    className="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] font-medium text-sm flex items-center gap-1 transition-colors"
-                  >
+                  <span className="text-[var(--color-accent)] font-medium text-sm flex items-center gap-1">
                     Apply →
-                  </Link>
-                </div>
+                  </span>
+                </Link>
               ))}
           </div>
         </div>

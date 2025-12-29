@@ -17,6 +17,7 @@ import type {
   NavLink,
   FooterLinkGroup,
   SocialLink,
+  ResourceCard,
 } from "@/types";
 
 // =============================================================================
@@ -37,7 +38,7 @@ export const footerLinkGroups: FooterLinkGroup[] = [
       { label: "About", href: "/about" },
       { label: "Blog", href: "/blog" },
       { label: "Careers", href: "/careers" },
-      { label: "Docs", href: "/docs" },
+      { label: "Docs", href: "https://docs.endgame.io/" },
     ],
   },
   {
@@ -99,12 +100,12 @@ export const investors: Investor[] = [
 ];
 
 export const clientLogos: ClientLogo[] = [
-  { name: "scale", label: "Scale", image: "/images/logos/scale-logo.svg", size: "h-10" },
-  { name: "betterup", label: "BetterUp", image: "/images/logos/betterup-logo.svg", size: "h-8" },
-  { name: "mux", label: "MUX", image: "/images/logos/mux-logo.svg", size: "h-8" },
-  { name: "accuris", label: "ACCURIS", image: "/images/logos/accuris-logo.svg", size: "h-6" },
-  { name: "hex", label: "HEX", image: "/images/logos/hex-logo.svg", size: "h-8" },
-  { name: "montecarlo", label: "MONTE CARLO", image: "/images/logos/monte-carlo-logo.svg", size: "h-8" },
+  { name: "scale", label: "Scale", image: "/images/logos/scale-logo.svg", size: "h-6" },
+  { name: "betterup", label: "BetterUp", image: "/images/logos/betterup-logo.svg", size: "h-5" },
+  { name: "mux", label: "MUX", image: "/images/logos/mux-logo.svg", size: "h-5" },
+  { name: "accuris", label: "ACCURIS", image: "/images/logos/accuris-logo.svg", size: "h-4" },
+  { name: "hex", label: "HEX", image: "/images/logos/hex-logo.svg", size: "h-5" },
+  { name: "montecarlo", label: "MONTE CARLO", image: "/images/logos/monte-carlo-logo.svg", size: "h-5" },
 ];
 
 // =============================================================================
@@ -124,7 +125,7 @@ export const featuredBlogPosts: FeaturedBlogPost[] = [
     title: "The Prototype Gap: How to build Endgame yourself",
     description: "\"This is cool. But couldn't we just build this ourselves in GPT or Claude?\"",
     image: "/images/home/guide.png",
-    slug: "prototype-gap",
+    slug: "the-prototype-gap",
   },
   {
     id: 2,
@@ -159,4 +160,27 @@ export const featureTabs: FeatureTab[] = [
   { id: 1, title: "Account managers", description: "Prep for QBRs, spot expansions, and keep customers growing", backgroundImage: "/images/home/account-managers-background.png", textImage: "/images/home/account-managers-text.png" },
   { id: 2, title: "Revenue leaders", description: "Coach at scale, identify risks, and drive consistent execution", backgroundImage: "/images/home/revenue-leaders-background.png", textImage: "/images/home/revenue-leaders-text.png" },
   { id: 3, title: "Ops & enablement", description: "See what's working and standardize best practices", backgroundImage: "/images/home/op-background.png", textImage: "/images/home/ops-text.png" },
+];
+
+export const resourceCards: ResourceCard[] = [
+  {
+    title: "Integrations",
+    description: "Learn more about connecting your internal and external data",
+    href: "https://docs.endgame.io/integrations/salesforce",
+  },
+  {
+    title: "Security",
+    description: "Find our trust center and security documentation",
+    href: "https://docs.endgame.io/trust/security#security",
+  },
+  {
+    title: "Changelog",
+    description: "See what's new in our world",
+    href: "https://docs.endgame.io/changelog",
+  },
+  {
+    title: "Templates",
+    description: "Start with proven examples of prompts that work",
+    href: "https://docs.endgame.io/features/templates",
+  },
 ];

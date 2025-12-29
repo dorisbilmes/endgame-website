@@ -10,3 +10,4 @@ export { Card } from "./Card";
 export { Badge } from "./Badge";
 export { Tabs } from "./Tabs";
 export { Pagination } from "./Pagination";
+export { LogoMarquee } from "./LogoMarquee";

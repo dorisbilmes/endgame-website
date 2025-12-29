@@ -24,13 +24,25 @@ export function Footer() {
               <div key={group.title} className="flex flex-col gap-3">
                 <h4 className="text-[var(--color-text)] text-sm font-medium mb-1">{group.title}</h4>
                 {group.links.map((link) => (
-                  <Link 
-                    key={link.href} 
-                    href={link.href} 
-                    className="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
-                  >
-                    {link.label}
-                  </Link>
+                  link.href.startsWith("http") ? (
+                    <a 
+                      key={link.href} 
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link 
+                      key={link.href} 
+                      href={link.href} 
+                      className="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  )
                 ))}
               </div>
             ))}
