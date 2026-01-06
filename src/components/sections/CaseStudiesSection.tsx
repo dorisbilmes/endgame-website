@@ -6,7 +6,7 @@ import { Card } from "@/components/ui";
 
 export function CaseStudiesSection() {
   return (
-    <section className="py-24 bg-[var(--color-canvas)] w-full">
+    <section className="py-24 w-full">
       <h2 className="text-[24px] lg:text-[32px] font-semibold text-[var(--color-text)] mb-12">
         The customer impact is real
       </h2>

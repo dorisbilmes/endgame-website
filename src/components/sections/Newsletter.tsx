@@ -20,7 +20,7 @@ export function Newsletter({
   };
 
   return (
-    <section className="py-24 bg-[var(--color-canvas)] w-full">
+    <section className="py-24 w-full">
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-[24px] lg:text-[32px] font-semibold text-[var(--color-text)] mb-4">
           {title}

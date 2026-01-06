@@ -16,7 +16,7 @@ export default function PrivacyPage() {
         videoSrc={null}
         align="center"
       />
-      <section className="py-20 bg-[var(--color-canvas)] w-full">
+      <section className="py-20 w-full">
         <div className="prose max-w-[720px] mx-auto relative flex-none w-full h-auto whitespace-pre-wrap break-words [&>p]:mb-[24px]">
           <p className="text-sm text-[var(--color-text-secondary)] mb-8">
             Last Updated: March 5, 2025

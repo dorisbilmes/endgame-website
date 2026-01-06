@@ -69,7 +69,7 @@ export default function CareersPage() {
       />
 
       {/* Investor Logos */}
-      <section className="py-20 bg-[var(--color-canvas)] w-full">
+      <section className="py-20  w-full">
         <p className="text-center text-base text-[var(--color-text-secondary)] mb-10">
           Backed by world-class investors
         </p>

@@ -84,7 +84,7 @@ body {
   padding-top: var(--section-py);
   padding-bottom: var(--section-py);
   width: 100%;
-  background-color: var(--color-canvas);
+  /* background-color: var(--color-canvas); */
 }
 
 /* Section title - consistent typography */
