@@ -1,17 +1,18 @@
 ---
-title: "The Prototype Gap: How to build Endgame yourself"
-description: "Most Endgame demos end with the same question: 'This is cool. But couldn't we just build this ourselves in GPT or Claude?' You could. In some cases, you should. Here's what we tell them."
-date: 2025-11-07
+title: 'The Prototype Gap: How to build Endgame yourself'
+description: 'Most Endgame demos end with the same question:'
+date: 2025-11-07T00:00:00.000Z
 author: Alex Bilmes
-tags: [Guide]
+tags:
+  - Guide
 image: /images/home/guide.png
 ---
 
 Most Endgame demos end with the same question:
 
+<Quote>
 "This is cool. But couldn't we just build this ourselves in GPT or Claude?"
-
-![The Prototype Gap](/images/blog/content/the-prototype-gap-02.png)
+</Quote>
 
 You could. In some cases, you should. Start with a prototype. Upload a few Gong transcripts into ChatGPT, add custom instructions for deal reviews, and get helpful insights. Go a step further with n8n or Zapier to build automated workflows. It's fast, inexpensive, and works well for a few deals or opportunities.
 
@@ -21,12 +22,12 @@ This paradox has plagued humanity for centuries: the [Dunning–Kruger effect](h
 
 ![The Dunning-Kruger effect of AI GTM prototypes](/images/blog/content/the-prototype-gap-05.png)
 
-![the-prototype-gap](/images/blog/content/the-prototype-gap-02.png)
-
 
 BetterUp ran into this scenario with [the false hope of AI prototypes](/case-studies/betterup). Their GTM teams began experimenting with ChatGPT and Claude. Custom projects and GPTs proliferated across the organization. After the excitement of tinkering wore off, they ran into challenges. As [Austin Johnsey](https://www.linkedin.com/in/austinjohnsey/), Director of GTM Systems shared:
 
+<Quote>
 "I got on Claude, started connecting a few things, querying about one person or one account. It worked decently well. Then I tried to look at someone's entire book of business and Claude just crashed."
+</Quote>
 
 The pattern repeated across the organization. Teams would get something working for a single use case, then hit architectural limits when trying to scale. Leadership wanted book-level risk analysis. Account executives managing 25–50 accounts and 20+ renewals each needed full visibility into blind spots. Single-use workflows worked, but scaling them didn't.
 
@@ -36,7 +37,6 @@ Prototyping is easy. Production-grade infrastructure is hard. You need emails, S
 
 And that's the prototyping gap.
 
-![The prototype gap](/images/blog/content/the-prototype-gap-08.png)
 
 ![The prototype gap.png](/images/blog/content/the-prototype-gap-03.png)
 
@@ -45,23 +45,27 @@ This is the harsh reality between tinkering with GPT project files and building 
 
 But what shark-infested waters lurk in the canyon? And what would it actually take to build Endgame yourself? A few weeks ago, the CTO of a fast-growing 800-person software company asked the big question to his Head of RevOps:
 
+<Quote>
 "Can't we just build this ourselves?"
+</Quote>
 
 So we partnered with their RevOps lead to clearly lay out the complexity ahead and what they'd need to build to cross the canyon.
 
-**Data infrastructure.** You need to connect every data source—Salesforce, Slack, Google Drive, Gong, email—and manage authentication, rate limits, and permissions. Without proper data pipelines, the system collapses under its own API calls.
+<div className="mt-8">
 
-**Retrieval.** You must make that data searchable, context-aware, and properly governed. That means setting up a vector database to store the appropriate embeddings (assuming you are already experts in vectors and embeddings) to make the content useful for LLMs, then layering on the metadata you'll need for access control & data governance.
+1. **Data infrastructure.** You need to connect every data source—Salesforce, Slack, Google Drive, Gong, email—and manage authentication, rate limits, and permissions. Without proper data pipelines, the system collapses under its own API calls.
+2. **Retrieval.** You must make that data searchable, context-aware, and properly governed. That means setting up a vector database to store the appropriate embeddings (assuming you are already experts in vectors and embeddings) to make the content useful for LLMs, then layering on the metadata you'll need for access control & data governance.
+3. **Reasoning.** The AI needs orchestration logic: model routing, fine-tuning, guardrails, and multi-agent coordination that mimic how humans research, synthesize, and respond.
+4. **Interface.** Reps won't use something that breaks their workflow. You need UX layers that live inside Slack, maintain context, and respond instantly.
+5. **Evaluation.** Production systems require observability—tracking accuracy, latency, costs, and user feedback in real time to keep improving.
 
-**Reasoning.** The AI needs orchestration logic: model routing, fine-tuning, guardrails, and multi-agent coordination that mimic how humans research, synthesize, and respond.
-
-**Interface.** Reps won't use something that breaks their workflow. You need UX layers that live inside Slack, maintain context, and respond instantly.
-
-**Evaluation.** Production systems require observability—tracking accuracy, latency, costs, and user feedback in real time to keep improving.
+</div>
 
 The CTO's answer after reviewing requirements: "No f***** way I'm building all that. Fine, go ahead."
 
-That moment is the catalyst nearly every time. It's why teams like Monte Carlo, Hex, BetterUp, Scale, Accuris, and Benchling chose to bet on Endgame. They recognized the deep complexity of building production-grade infrastructure for building revenue superintelligence:
+<div className="mb-8" />
+
+That moment is the catalyst nearly every time. It's why teams like Monte Carlo, Hex, BetterUp, Scale, Accuris, and Benchling chose to bet on Endgame. They recognized the deep complexity of building production-grade infrastructure for building [revenue superintelligence](/blog/revenue-superintelligence):
 
 ![Customer testimonials from Monte Carlo and Accuris](/images/blog/content/the-prototype-gap-07.png)
 
@@ -140,7 +144,7 @@ How sales teams actually interact with the system in their daily workflows.
 - Making interactions fast (reps won't use slow tools)
 - Providing the right abstraction level: simple for users, complex underneath
 - Implementing session management and context persistence
-- Slack integrations and email reminders, so reps can access where they work
+- [Slack integrations](https://docs.endgame.io/changelog#endgame-threads-now-available-in-slack) and [email reminders](https://docs.endgame.io/changelog#tasks-digests), so reps can access where they work
 - MCP servers so other teams can also interface with the intelligence
 - Natural-language chat and Q&A interfaces
 - Exporting into CSVs, Google Drive, etc
@@ -152,7 +156,6 @@ How sales teams actually interact with the system in their daily workflows.
 
 Production systems need continuous monitoring to ensure they're working correctly.
 
-![the prototype gap](/images/blog/content/the-prototype-gap-06.png)
 
 **What this means:**
 
@@ -170,8 +173,6 @@ Production metrics that matter: request latency, error rates, token costs per qu
 **Why this is hard:** Without proper evaluation infrastructure, systems degrade over time without visibility into why. You're flying blind. Building closed-loop systems that learn from outcomes requires sophisticated data pipelines connecting AI usage back to business results.
 
 ## Context engineering: The bridge to revenue superintelligence
-
-![the prototype gap](/images/blog/content/the-prototype-gap-07.png)
 
 ![Context engineering: The bridge to revenue superintelligence](/images/blog/content/the-prototype-gap-06.png)
 

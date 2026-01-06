@@ -211,6 +211,13 @@ body {
   border-color: rgba(59, 130, 246, 0.5);
 }
 
+/* Static Card without hover */
+.card-flat-static {
+  background-color: #0d1e2f;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+}
+
 /* Standard card without gradient */
 .card {
   background-color: var(--color-surface-2);
@@ -297,7 +304,7 @@ h2.section-title {
 }
 
 .prose h2 {
-  font-size: 1.875rem;
+  font-size: 32px;
   font-weight: 600;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
@@ -313,12 +320,13 @@ h2.section-title {
 }
 
 .prose p {
-  margin-bottom: 1.25rem;
   line-height: 1.75;
+  margin-bottom: 1.25rem;
   color: var(--color-text-secondary);
 }
 
 .prose ul, .prose ol {
+  margin-top: 1.25rem;
   margin-bottom: 1.25rem;
   padding-left: 1.5rem;
   color: var(--color-text-secondary);
@@ -360,6 +368,15 @@ h2.section-title {
 .prose pre code {
   background: transparent;
   padding: 0;
+}
+
+/* Ensure spacing under images and videos in blog posts */
+.prose img, 
+.prose video,
+.prose .mt-8.mb-10 {
+  margin-top: 2rem !important;
+  margin-bottom: 2.5rem !important;
+  display: block;
 }
 
 .prose a {

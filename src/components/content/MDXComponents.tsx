@@ -6,6 +6,16 @@
 
 import React from "react";
 
+export function Quote({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="card-flat-static py-9 px-12 my-8">
+      <div className="text-[20px] text-white leading-snug [&>p]:mb-0">
+        {children}
+      </div>
+    </div>
+  );
+}
+
 export const mdxComponents = {
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1 className="text-4xl font-bold text-[var(--color-text)] mt-8 mb-4" {...props} />
@@ -17,7 +27,7 @@ export const mdxComponents = {
     <h3 className="text-xl font-medium text-[var(--color-text)] mt-6 mb-2" {...props} />
   ),
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p className="text-[var(--color-text-secondary)] leading-relaxed mb-4" {...props} />
+    <p className="text-[var(--color-text-secondary)] leading-relaxed" {...props} />
   ),
   ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
     <ul className="list-disc pl-6 text-[var(--color-text-secondary)] mb-4 space-y-2" {...props} />
@@ -41,8 +51,22 @@ export const mdxComponents = {
     <a className="text-white underline underline-offset-2 hover:opacity-80 transition-opacity" {...props} />
   ),
   hr: () => <hr className="border-[var(--color-border)] my-8" />,
-  img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    <img className="rounded-[var(--radius-card)] my-6 w-full" {...props} />
+  Quote: Quote,
+  img: ({ className, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
+    <div className="mt-8 mb-10">
+      <img 
+        className={`rounded-[var(--radius-card)] w-full ${className || ""}`} 
+        {...props} 
+      />
+    </div>
+  ),
+  video: ({ className, ...props }: React.VideoHTMLAttributes<HTMLVideoElement>) => (
+    <div className="mt-8 mb-10">
+      <video 
+        className={`rounded-[var(--radius-card)] w-full ${className || ""}`} 
+        {...props} 
+      />
+    </div>
   ),
 };
 

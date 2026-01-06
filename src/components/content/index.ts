@@ -8,5 +8,6 @@
 export { BlogPostsClient } from "./BlogPostsClient";
 export { BlogPostCard } from "./BlogPostCard";
 export { PostFilters } from "./PostFilters";
-export { mdxComponents, Callout } from "./MDXComponents";
+export { ShareArticle } from "./ShareArticle";
+export { mdxComponents, Callout, Quote } from "./MDXComponents";
 

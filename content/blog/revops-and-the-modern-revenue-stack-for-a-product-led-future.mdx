@@ -1,11 +1,18 @@
 ---
-title: "Transforming the modern revenue stack for a product-led future"
-description: "Insight from Retool's Jonathan Krangel on the critical role RevOps plays in architecting the tech stack for modern revenue teams"
-date: 2022-12-20
+title: Transforming the modern revenue stack for a product-led future
+description: >-
+  The way modern software companies go-to-market is rapidly changing – first
+  party product data is paramount in a product-led company, speciality tools to
+  expedite sales cycles are abound, and RevOps teams are taking center stage in
+  how all of these pieces work together.
+date: 2022-12-20T00:00:00.000Z
 author: Jonathan Krangel
-tags: [Guide]
+tags:
+  - Guide
 image: /images/blog/cards/transforming-the-modern-revenue.png
 ---
+
+Insight from Retool's Jonathan Krangel on the critical role RevOps plays in architecting the tech stack for modern revenue teams.
 
 The way modern software companies go-to-market is rapidly changing – first party product data is paramount in a product-led company, speciality tools to expedite sales cycles are abound, and RevOps teams are taking center stage in how all of these pieces work together.
 
@@ -13,7 +20,9 @@ In the world of RevOps [Jonathan Krangel](https://www.linkedin.com/in/jkrangel/)
 
 We were so excited to have him join us and even more excited to have him share the key takeaways from his session at Endgame's [Product-led Sales Summit](/blog/key-takeaways-product-led-sales-summit).
 
-> The role of RevOps is to manage all the technical complexity and deliver a totally delightful experience to the people that they support
+<Quote>
+The role of RevOps is to manage all the technical complexity and deliver a totally delightful experience to the people that they support
+</Quote>
 
 ## Challenge of Revops today?
 
@@ -23,13 +32,17 @@ The standard GTM tech stack has moved from monolithic software to lots of specia
 
 RevOps is a loaded term that can encompass: sales ops, growth, strategy, marketing ops and more. I joined Retool as the first sales ops person and had the rare opportunity to build out the function from first principles and eventually, to expand the remit to cover all of GTM. My team supports all GTM functions (sales, success, support, marketing) and covers the functional areas of strategy and planning, reporting, and systems, and variable compensation and deal desk.
 
-> "What I learned at a variety of companies is that inevitably you wind up with many different ops people (sales, marketing, success). If those people aren't officially joined together by some kind of structure, they always self organize." - Jonathan Krangel | Head of Revenue Operations, Retool
+<Quote>
+"What I learned at a variety of companies is that inevitably you wind up with many different ops people (sales, marketing, success). If those people aren't officially joined together by some kind of structure, they always self organize." - Jonathan Krangel | Head of Revenue Operations, Retool
+</Quote>
 
 ## Where is RevOps in 2 years?
 
 Elevated to have a true seat at the table, reporting either to CRO, COO, CFO or CEO and with a true 30k foot view across the business. RevOps is still a new concept and there's not a lot of conventional wisdom yet.
 
-> "PLG raises the bar as it's the ultimate cross functional problem. Product, sales, or marketing and more all need to have a hand in solving it. RevOps sits naturally at the intersection of all of the things companies need to get right when delivering a product-led motion" - Jonathan Krangel | Head of Revenue Operations, Retool
+<Quote>
+"PLG raises the bar as it's the ultimate cross functional problem. Product, sales, or marketing and more all need to have a hand in solving it. RevOps sits naturally at the intersection of all of the things companies need to get right when delivering a product-led motion" - Jonathan Krangel | Head of Revenue Operations, Retool
+</Quote>
 
 ## Technical literacy for RevOps is a must as data warehouses are the nerve center of modern businesses
 
@@ -37,7 +50,9 @@ Elevated to have a true seat at the table, reporting either to CRO, COO, CFO or 
 
 The modern data warehouse is the clearinghouse for all systems of record. Businesses store and model all data there and a well designed analytics stack can hydrate the GTM systems with the information they need to drive decisions, workflow, and more. It's incumbent upon RevOps to have enough data modeling and data engineering knowledge to be great partners to the Data teams who maintain the analytics stack.
 
-> "SQL literacy is a must have to hire for my team. You need to be able to make sense of the fluid and complex data that a modern GTM machine generates as well as understand downstream the impact of your decisions. We can't operate in a silo with a spreadsheet anymore" - Jonathan Krangel | Head of Revenue Operations, Retool
+<Quote>
+"SQL literacy is a must have to hire for my team. You need to be able to make sense of the fluid and complex data that a modern GTM machine generates as well as understand downstream the impact of your decisions. We can't operate in a silo with a spreadsheet anymore" - Jonathan Krangel | Head of Revenue Operations, Retool
+</Quote>
 
 ### Who owns what data and who determines the source of truth?
 
@@ -49,11 +64,9 @@ Analytics owns data infrastructure, but they don't own the data. Second to Produ
 
 Many companies underestimate the complexity of writing product data into Salesforce. Doing so without a clear plan and architecture generally leads to hard to maintain systems, inaccurate decision making, and confused reps. Still, properly writing product data into Salesforce can unlock immense value for your teams. I always advise teams to think about the problem in the following way:
 
-**Start by defining, in words, what each GTM object is.** For example, we define an "account" in Salesforce, as "a discrete entity with which we may or may not do business". Each word in that statement informs how we think about key decisions, such as how to handle parent/child relationships and when we create new accounts. This definition made it clear to us that there was no clear analogue to an "account" in our product data model.
-
-**Respect the differences between product and GTM constructs.** Our product, like most SaaS, has an "organization" concept. We write this back into Salesforce with minimal transformation in its own custom object and then have a robust matching process that creates a many-to-one relationship between one account and all relevant organizations. This reflects reality (i.e., one account may have multiple Retool organizations) while respecting the data models of both concepts.
-
-**RevOps must take the lead.** Our unique role at the intersection of the GTM and the rest of our infrastructure means RevOps is best positioned to define how various internal and external constructs relate to one another while keeping things clean and scalable.
+1. **Start by defining, in words, what each GTM object is.** For example, we define an "account" in Salesforce, as "a discrete entity with which we may or may not do business". Each word in that statement informs how we think about key decisions, such as how to handle parent/child relationships and when we create new accounts. This definition made it clear to us that there was no clear analogue to an "account" in our product data model.
+2. **Respect the differences between product and GTM constructs.** Our product, like most SaaS, has an "organization" concept. We write this back into Salesforce with minimal transformation in its own custom object and then have a robust matching process that creates a many-to-one relationship between one account and all relevant organizations. This reflects reality (i.e., one account may have multiple Retool organizations) while respecting the data models of both concepts.
+3. **RevOps must take the lead.** Our unique role at the intersection of the GTM and the rest of our infrastructure means RevOps is best positioned to define how various internal and external constructs relate to one another while keeping things clean and scalable.
 
 ### What are you using to do this?
 
@@ -81,11 +94,9 @@ We build when we have a strong point of view about the exact way we want to do s
 
 The product-led world is ever changing and so approaching variable compensation in a way that allows safe experimentation is key. I've had a lot of success with a three tiered system:
 
-**Compensation Plans:** These are fixed (annual or quarterly) and are the most rigid. These define how reps make their OTE (on-target earnings).
-
-**SPIFs:** Special incentives that enable us to test new ideas or apply short term incentives. These are managed by Revenue Operations and the most successful ideas get promoted into Compensation Plans in the following cycle.
-
-**Manager Discretion:** Managers are given a small budget that they can use to test local incentives with their teams with minimal overhead / approvals.
+1. **Compensation Plans:** These are fixed (annual or quarterly) and are the most rigid. These define how reps make their OTE (on-target earnings).
+2. **SPIFs:** Special incentives that enable us to test new ideas or apply short term incentives. These are managed by Revenue Operations and the most successful ideas get promoted into Compensation Plans in the following cycle.
+3. **Manager Discretion:** Managers are given a small budget that they can use to test local incentives with their teams with minimal overhead / approvals.
 
 We have tooling built in Retool that enables our sales leadership and Revenue Operations to manage all of the above in highly automated, transparent and auditable ways. These workflows integrate with our variable compensation system to ensure all payouts, regardless of source, are captured and above board.
 
