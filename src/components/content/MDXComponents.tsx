@@ -53,20 +53,16 @@ export const mdxComponents = {
   hr: () => <hr className="border-[var(--color-border)] my-8" />,
   Quote: Quote,
   img: ({ className, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    <div className="mt-8 mb-10">
-      <img 
-        className={`rounded-[var(--radius-card)] w-full ${className || ""}`} 
-        {...props} 
-      />
-    </div>
+    <img 
+      className={`rounded-[var(--radius-card)] w-full block mt-8 mb-10 ${className || ""}`} 
+      {...props} 
+    />
   ),
   video: ({ className, ...props }: React.VideoHTMLAttributes<HTMLVideoElement>) => (
-    <div className="mt-8 mb-10">
-      <video 
-        className={`rounded-[var(--radius-card)] w-full ${className || ""}`} 
-        {...props} 
-      />
-    </div>
+    <video 
+      className={`rounded-[var(--radius-card)] w-full block mt-8 mb-10 ${className || ""}`} 
+      {...props} 
+    />
   ),
 };
 
